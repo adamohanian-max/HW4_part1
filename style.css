@@ -1,0 +1,100 @@
+/* Name: Adam Ohanian
+   Email: adam_ohanian@student.uml.edu
+   File: style.css 
+   dependencies: script.js, index.html
+   Description: CSS styles for the dynamic multiplication table for HW3
+   Copywright (c) 2026 Adam Ohanian */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+/* Style for the heading */
+h1 {
+  text-align: center;
+  color: blue
+}
+/* Style for the table */
+form {
+  display: grid;
+  grid-template-columns: 220px 200px;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+/*center set button to generate table*/
+button {
+  grid-column: span 2;
+  padding: 8px;
+  width: 30%;
+    justify-self: center;
+}
+/* Style for error messages */
+#error-message {
+  color: red;
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+/* Style for the table container to make it scrollable */
+#table-container {
+  max-width: 100%;
+  max-height: 400px;
+  overflow: auto;
+  border: 1px solid #ffffff;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+th, td {
+  border: 1px solid #6e6e6e;
+  padding: 8px;
+  text-align: center;
+  min-width: 50px;
+}
+/* Make the header row sticky */
+thead th {
+  position: sticky;
+  top: 0;
+  background-color: rgb(1, 1, 70);
+  color: white;
+  z-index: 2;
+}
+/* Make the first column sticky */
+tbody th {
+  position: sticky;
+  left: 0;
+  background-color: rgb(1, 1, 70);
+  color: rgb(255, 255, 255);
+  z-index: 1;
+}
+/* Style for alternating row colors */
+tbody tr:nth-child(even) td {
+  background-color: #ff7979;
+}
+/* jQuery Validation error labels */
+label.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 2px;
+  display: block;          /* put on its own line under the input */
+}
+
+/* Optionally highlight invalid inputs */
+input.error {
+  border: 2px solid red;
+  background-color: #ffecec;
+}
+
+/* Valid inputs (if using success classes) */
+input.valid {
+  border: 2px solid #4CAF50;
+  background-color: #f4fff4;
+}
+/* Ensure error labels align with inputs, not in the label column */
+form label.error {
+  grid-column: 2 / 3;   /* second column, under the input */
+} 
